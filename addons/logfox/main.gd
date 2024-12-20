@@ -16,21 +16,25 @@ func _exit_tree() -> void:
 	info("_exit_tree", self)
 
 
+## Log information message
 func info(message: String, source: Node) -> void:
 	_log(message, "[color=#A6E3A1]INFO[/color]", source)
 
 
+## Log warning message and push it to debugger
 func warning(message: String, source: Node) -> void:
 	_log(message, "[color=#F9E2AF]WARNING[/color]", source)
 	push_warning("[" + source.name + "] " + message)
 
 
+## Log error message, push it to debugger and create breakpoint
 func error(message: String, source: Node) -> void:
 	_log(message, "[color=#F38BA8]ERROR[/color]", source)
 	push_error("[" + source.name + "] " + message)
 	breakpoint
 
 
+# Internal func to print messages
 func _log(message: String, log_level: String, source: Node) -> void:
 	print_rich(
 		"[",
