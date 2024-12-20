@@ -1,0 +1,165 @@
+[gd_scene load_steps=13 format=3 uid="uid://cufuflybvqm4d"]
+
+[ext_resource type="Script" uid="uid://55epwpulvdw6" path="res://addons/logfox/dock/file_buttons_tab.gd" id="1_dg3lm"]
+[ext_resource type="Script" uid="uid://b801t3abtu8ql" path="res://addons/logfox/dock/info_filter_button.gd" id="2_m4fxn"]
+[ext_resource type="Script" uid="uid://l12kubmg00de" path="res://addons/logfox/dock/warn_filter_button.gd" id="3_8gv80"]
+[ext_resource type="Script" uid="uid://s2k8ldlm0dr3" path="res://addons/logfox/dock/error_filter_button.gd" id="4_3d0t5"]
+[ext_resource type="Script" uid="uid://dh0ckqdbuu2ab" path="res://addons/logfox/dock/settings_button.gd" id="5_qeymh"]
+[ext_resource type="Script" uid="uid://je8qm10t6ipr" path="res://addons/logfox/dock/file_text_label.gd" id="6_5k2ww"]
+
+[sub_resource type="Gradient" id="Gradient_i1av6"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.65098, 0.890196, 0.631373, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i1av6"]
+gradient = SubResource("Gradient_i1av6")
+width = 25
+height = 25
+
+[sub_resource type="Gradient" id="Gradient_s0b6d"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.976471, 0.886275, 0.686275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ofpnu"]
+gradient = SubResource("Gradient_s0b6d")
+width = 25
+height = 25
+
+[sub_resource type="Gradient" id="Gradient_2hy54"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.952941, 0.545098, 0.658824, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s0b6d"]
+gradient = SubResource("Gradient_2hy54")
+width = 25
+height = 25
+
+[node name="LogFoxDock" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeftContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+
+[node name="TopBarLabel" type="Label" parent="LeftContainer"]
+layout_mode = 2
+text = "File"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="LeftContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FileButtons" type="VBoxContainer" parent="LeftContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dg3lm")
+
+[node name="RightContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="RightContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RightContainer/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="RightContainer/TopBar/HBoxContainer"]
+layout_mode = 2
+text = "Filters:"
+
+[node name="InfoButton" type="Button" parent="RightContainer/TopBar/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+toggle_mode = true
+text = "I"
+script = ExtResource("2_m4fxn")
+
+[node name="TextureRect" type="TextureRect" parent="RightContainer/TopBar/HBoxContainer/InfoButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -0.405001
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_i1av6")
+
+[node name="WarnButton" type="Button" parent="RightContainer/TopBar/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+toggle_mode = true
+text = "W"
+script = ExtResource("3_8gv80")
+
+[node name="TextureRect" type="TextureRect" parent="RightContainer/TopBar/HBoxContainer/WarnButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -0.405001
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ofpnu")
+
+[node name="ErrorButton" type="Button" parent="RightContainer/TopBar/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+toggle_mode = true
+text = "E"
+script = ExtResource("4_3d0t5")
+
+[node name="TextureRect" type="TextureRect" parent="RightContainer/TopBar/HBoxContainer/ErrorButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -0.405001
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_s0b6d")
+
+[node name="SettingsButton" type="Button" parent="RightContainer/TopBar"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "SETTINGS"
+script = ExtResource("5_qeymh")
+
+[node name="FileTextLabel" type="RichTextLabel" parent="RightContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+selection_enabled = true
+script = ExtResource("6_5k2ww")

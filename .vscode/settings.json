@@ -1,0 +1,23 @@
+{
+	"files.associations": {
+		"*.gd": "gdscript"
+	},
+	"editor.formatOnSave": true,
+	"editor.tabSize": 4,
+	"editor.detectIndentation": false,
+	"[gdscript]": {
+		"editor.defaultFormatter": "EddieDover.gdscript-formatter-linter",
+		"editor.formatOnType": true
+	},
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		".godot": true,
+		"**/*.uid": true,
+		"**/*.tscn": true
+	}
+}
