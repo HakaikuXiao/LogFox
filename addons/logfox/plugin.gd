@@ -5,7 +5,7 @@ var logfox_doc: Control
 
 
 func _enter_tree() -> void:
-	logfox_doc = preload("res://addons/logfox/dock/log_fox_dock.tscn").instantiate()
+	logfox_doc = preload("res://addons/logfox/docks/log_fox_dock_main.tscn").instantiate()
 	add_control_to_bottom_panel(logfox_doc, "LogFox")
 	add_autoload_singleton("LogFox", "res://addons/logfox/main.gd")
 

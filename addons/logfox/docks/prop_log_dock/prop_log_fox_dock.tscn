@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://curbnstb1k064"]
+
+[ext_resource type="Script" uid="uid://c8erupqkyuuxy" path="res://addons/logfox/docks/prop_log_dock/prop_file_buttons.gd" id="1_e1s83"]
+[ext_resource type="Script" uid="uid://bq00gn0quykuq" path="res://addons/logfox/docks/chart/chart.gd" id="2_f7id8"]
+
+[node name="PropLogFoxDock" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="LeftContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+
+[node name="TopBarLabel" type="Label" parent="LeftContainer"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Property"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="LeftContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PropFileButtons" type="VBoxContainer" parent="LeftContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1s83")
+
+[node name="RightContainer" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+
+[node name="Graph2D" type="Control" parent="RightContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_f7id8")
+background_color = Color(0, 0, 0, 0)
+metadata/_custom_type_script = ExtResource("2_f7id8")

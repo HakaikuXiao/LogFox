@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://p56olctgr8cb"]
+
+[ext_resource type="PackedScene" uid="uid://cufuflybvqm4d" path="res://addons/logfox/docks/log_files_dock/log_fox_dock.tscn" id="1_va3lu"]
+[ext_resource type="PackedScene" uid="uid://curbnstb1k064" path="res://addons/logfox/docks/prop_log_dock/prop_log_fox_dock.tscn" id="2_h0uqf"]
+
+[node name="LogFoxDockMain" type="TabContainer"]
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Log Files" parent="." instance=ExtResource("1_va3lu")]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Properties" parent="." instance=ExtResource("2_h0uqf")]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
